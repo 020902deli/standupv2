@@ -1,69 +1,67 @@
-<!doctype html> 
+<!doctype html>
 
-<html lang="en"> 
+<html lang="en">
 
-<head> 
+<head>
 
- <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
 
- <title>Lista Sarcini</title> 
+    <title>Lista Sarcini</title>
 
- <!-- Bootstrap CSS File --> 
+    <!-- Bootstrap CSS File -->
 
-<meta charset="utf-8"> 
+    <meta charset="utf-8">
 
- <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
- <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
- <!-- The above 2 meta tags *must* come first in the head; any other head 
+    <!-- The above 2 meta tags *must* come first in the head; any other head 
 
-content must come *after* these tags --> 
+content must come *after* these tags -->
 
- <meta name="description" content=""> 
+    <meta name="description" content="">
 
- <meta name="author" content=""> 
+    <meta name="author" content="">
 
- <link rel="stylesheet" 
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 
-href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"> 
+</head>
 
-</head> 
+<body>
 
-<body> 
+    <div class="container">
 
-<div class="container"> 
+        <nav class="navbar navbar-default">
 
- <nav class="navbar navbar-default"> 
+            <div class="container-fluid">
 
- <div class="container-fluid"> 
+                <div class="navbar-header">
 
- <div class="navbar-header"> 
+                    <a class="navbar-brand" href="#">Exemplu aplicatie-Laravel CRUD </a>
 
- <a class="navbar-brand" href="#">Exemplu aplicatie-Laravel CRUD </a> 
+                </div>
 
- </div> 
+                <ul class="nav navbar-nav">
 
- <ul class="nav navbar-nav"> 
+                </ul>
 
- </ul> 
 
- 
 
- </div> 
+            </div>
 
- </nav> 
+        </nav>
 
- <head> 
+        <head>
 
- <h1></h1> 
+            <h1></h1>
 
- </head> 
+        </head>
 
- @yield('content') 
+        @yield('content')
 
-</div> 
+    </div>
 
-</body> 
+</body>
 
-</html> 
+</html>
