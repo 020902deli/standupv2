@@ -65,7 +65,7 @@
  <a class="btn btn-primary" href="{{ route('comedians.edit',$comediant->id_comediant) }}">Modificare</a> 
 
  {{ Form::open(['method' => 'DELETE','route' =>['comedians.destroy', $comediant->id_comediant],'style'=>'display:inline']) }}
-  {{ Form::submit('Delete', ['class' => 'btn btndanger']) }} 
+  {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }} 
 
  {{ Form::close() }} 
  @endif
