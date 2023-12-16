@@ -24,8 +24,9 @@
 
                 <div class="pull-right"> 
 
-                    <a href="/contacts/create" class="btn btn-default">Adaugare Contact Nou</a> 
-
+                @if (Auth::user()->admin === 1)
+                <a href="/contacts/create" class="btn btn-default">Adaugare Contact Nou</a> 
+                @endif
                 </div> 
 
             </div> 
@@ -62,6 +63,7 @@
 
                                 <a class="btn btn-success" href="{{ route('contacts.show', $contact->id_contact) }}">Vizualizare</a> 
 
+                                @if (Auth::user()->admin === 1)
                                 <a class="btn btn-primary" href="{{ route('contacts.edit', $contact->id_contact) }}">Modificare</a> 
 
                                 {{ Form::open(['method' => 'DELETE', 'route' => ['contacts.destroy', $contact->id_contact], 'style' => 'display:inline']) }} 
@@ -69,7 +71,7 @@
                                 {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }} 
 
                                 {{ Form::close() }} 
-
+                                @endif
                             </td> 
 
                         </tr> 

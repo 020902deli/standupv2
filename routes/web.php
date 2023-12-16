@@ -27,6 +27,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 */
+Route::get('/', function () {
+    return redirect()->route('login'); // Redirecționează către pagina de login atunci când deschizi aplicația
+});
 Auth::routes();
 
     /*Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -38,20 +41,18 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/', function () {
-        return redirect()->route('home'); // Redirecționează către 'home.index'
-    });
+    Route::get('/home', [HomeController::class, 'index'])->name('home'); 
 
     //EVENT//
-    Route::get('/', [EventContactController::class, 'index']); 
+    Route::get('/events', [EventController::class, 'index']);
     Route::resource('events', EventController::class);
 
     //COMEDIANT//
-    Route::get('/', [ComediantController::class, 'index']);  
+    Route::get('/comedians', [ComediantController::class, 'index']);
     Route::resource('comedians', ComediantController::class);
 
     //CONTACT//
-    Route::get('/', [ContactController::class, 'index']);    
+    Route::get('/contacts', [ContactController::class, 'index']);
     Route::resource('contacts', ContactController::class); 
 
 });

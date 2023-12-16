@@ -25,9 +25,9 @@
  <div class="form-group"> 
 
  <div class="pull-right"> 
-
+ @if (Auth::user()->admin === 1)
  <a href="/comedians/create" class="btn btn-default">Adaugare Comediant Noua</a> 
-
+ @endif
  </div> 
 
  </div> 
@@ -60,19 +60,15 @@
 
  <td> 
 
-<a class="btn btn-success" href="{{ 
+<a class="btn btn-success" href="{{ route('comedians.show',$comediant->id_comediant) }}">Vizualizare</a> 
+@if (Auth::user()->admin === 1)
+ <a class="btn btn-primary" href="{{ route('comedians.edit',$comediant->id_comediant) }}">Modificare</a> 
 
-route('comedians.show',$comediant->id) }}">Vizualizare</a> 
-
- <a class="btn btn-primary" href="{{ 
-
-route('comedians.edit',$comediant->id) }}">Modificare</a> 
-
- {{ Form::open(['method' => 'DELETE','route' =>['comedians.destroy', $comediant->id],'style'=>'display:inline']) }}
+ {{ Form::open(['method' => 'DELETE','route' =>['comedians.destroy', $comediant->id_comediant],'style'=>'display:inline']) }}
   {{ Form::submit('Delete', ['class' => 'btn btndanger']) }} 
 
  {{ Form::close() }} 
-
+ @endif
  </td> 
 
  </tr> 
