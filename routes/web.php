@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController; 
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\ComediantController; 
+use App\Http\Controllers\ContactController;  
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,5 +42,16 @@ Route::group(['middleware' => 'auth'], function () {
         return redirect()->route('home'); // Redirecționează către 'home.index'
     });
 
+    //EVENT//
+    Route::get('/', [EventContactController::class, 'index']); 
     Route::resource('events', EventController::class);
+
+    //COMEDIANT//
+    Route::get('/', [ComediantController::class, 'index']);  
+    Route::resource('comedians', ComediantController::class);
+
+    //CONTACT//
+    Route::get('/', [ContactController::class, 'index']);    
+    Route::resource('contacts', ContactController::class); 
+
 });

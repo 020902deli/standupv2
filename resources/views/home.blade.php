@@ -18,8 +18,8 @@
                 </div>
                 <div class="mt-4">
                         <a href="{{ route('events.index') }}" class="btn btn-primary">Evenimente</a>
-                        <a href="{{ route('events.index') }}" class="btn btn-primary">Comedianti</a>
-                        <a href="{{ route('events.index') }}" class="btn btn-primary">Contacte</a>
+                        <a href="{{ route('comedians.index') }}" class="btn btn-primary">Comedianti</a>
+                        <a href="{{ route('contacts.index') }}" class="btn btn-primary">Contacte</a>
                         <a href="{{ route('events.index') }}" class="btn btn-primary">Sponsori/Parteneri</a>
                     </div>
             </div>
