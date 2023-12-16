@@ -72,6 +72,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('partnerSponsors', PartnerSponsorController::class);
 
     //spCONTACT//
-    Route::get('/', [SpContactController::class, 'index']);
+    Route::get('/spContacts', [SpContactController::class, 'index']);
     Route::resource('spContacts', SpContactController::class); 
 });
