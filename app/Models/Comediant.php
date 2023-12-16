@@ -12,5 +12,12 @@ class Comediant extends Model
     protected $primaryKey = 'id_comediant'; 
 
     public $fillable = ['id_comediant','name', 'description']; 
+    public function agendas() 
+
+    { 
+
+        return $this->hasMany('App\Agenda', 'id_comediant'); 
+
+    }
     //use HasFactory;
 }

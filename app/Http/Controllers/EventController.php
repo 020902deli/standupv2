@@ -1,18 +1,30 @@
 <?php 
 
- 
+  
 
-namespace App\Http\Controllers; 
+namespace App\Http\Controllers;  
+
+  
 
 use Illuminate\Http\Request; 
 
+  
+
+use App\Models\Contact;  
+
 use App\Models\Event; 
 
-use App\Http\Requests; 
+use App\Models\EventContact;  
 
- 
+use App\Http\Requests;  
 
-class EventController extends Controller 
+  
+
+   
+
+  
+
+class EventContactController extends Controller 
 
 { 
 
@@ -20,25 +32,79 @@ class EventController extends Controller
 
      * Display a listing of the resource. 
 
+     * 
+
+     * @return \Illuminate\Http\Response 
+
      */ 
 
     public function index(Request $request) 
 
     { 
 
-        $events = Event::orderBy('name','ASC')->paginate(5); 
+        $eventContacts = EventContact::all();  
 
-        $value=($request->input('page',1)-1)*5; 
+  
 
-        return view('events.list',compact('events'))->with('i',$value); 
+        $contacts = Contact::all();  
+
+  
+
+        $events = Event::all();  
+
+  
+
+       // $agendas = Agenda::orderBy('id_rep_cont','ASC')->paginate(5);  
+
+  
+
+        //$value=($request->input('page',1)-1)*5;  
+
+  
+
+        foreach ($eventContacts as $eventContact)  
+
+  
+
+        {  
+
+  
+
+        $eventContact->event_name = $eventContact->event->name;  
+
+  
+
+        $eventContact->contact_name = $eventContact->contact->name;  
+
+  
+
+        }  
+
+  
+
+        //return view('eventContacts.list',compact('eventContacts'))->with('i',$value);  
+
+  
+
+        return view('eventContacts.list', compact('eventContacts', 'contacts', 'events')); 
+
+        //->with('i', $value);  
+
+  
+
+   
 
     } 
 
- 
+  
 
     /** 
 
      * Show the form for creating a new resource. 
+
+     * 
+
+     * @return \Illuminate\Http\Response 
 
      */ 
 
@@ -46,113 +112,167 @@ class EventController extends Controller
 
     { 
 
-        return view('events.create'); 
+        $contacts = Contact::all();  
+
+  
+
+        $events = Event::all();  
+
+  
+
+        return view('eventContacts.create', compact('contacts', 'events')); 
 
     } 
 
- 
+  
 
     /** 
 
      * Store a newly created resource in storage. 
 
+     * 
+
+     * @param \Illuminate\Http\Request $request 
+
+     * @return \Illuminate\Http\Response 
+
      */ 
 
     public function store(Request $request) 
 
-    { 
+{ 
 
-        $this->validate($request, ['name' => 'required','description' => 'required','date' => 'required', 'location' => 'required']); 
+    $this->validate($request, [  
 
-         // create new event 
+        'id_event' => 'required',  
 
-         Event::create($request->all()); 
+        'id_contact' => 'required',  
 
-         return redirect()->route('events.index')->with('success', 'Your event added successfully!'); 
+    ]);  
 
-    } 
+  
 
- 
+    // create new agenda  
+
+    EventContact::create($request->all());  
+
+  
+
+    return redirect()->route('agendas.index')->with('success', 'Your event contact added successfully!'); 
+
+} 
+
+  
 
     /** 
 
      * Display the specified resource. 
 
+     * 
+
+     * @param int $id 
+
+     * @return \Illuminate\Http\Response 
+
      */ 
 
-    public function show(string $id) 
+    public function show($id) 
 
     { 
 
-        $event = Event::find($id); 
+         $eventContact = EventContact::find($id);     
 
-        return view('events.show',compact('event'));  
+  
+
+        return view('eventContacts.show',compact('eventContact'));   
 
     } 
 
- 
+  
 
     /** 
 
      * Show the form for editing the specified resource. 
 
+     * 
+
+     * @param int $id 
+
+     * @return \Illuminate\Http\Response 
+
      */ 
 
-    public function edit(string $id) 
+    public function edit($id) 
 
     { 
 
-        $event = Event::find($id); 
+        $eventContact = EventContact::find($id);   
 
-        return view('events.edit',compact('event'));  
+  
+
+        return view('eventContacts.edit', compact('eventContact'));   
 
     } 
 
- 
+  
 
     /** 
 
      * Update the specified resource in storage. 
 
+     * 
+
+     * @param \Illuminate\Http\Request $request 
+
+     * @param int $id 
+
+     * @return \Illuminate\Http\Response 
+
      */ 
 
-    public function update(Request $request, string $id) 
+    public function update(Request $request, $id) 
 
-    { 
+{ 
 
-        $this->validate($request, [ 
+    $this->validate($request, [   
 
-            'name' => 'required', 
+        'id_event' => 'required',   
 
-            'description' => 'required', 
+        'id_contact' => 'required',   
 
-            'date' => 'required', 
+    ]);   
 
-            'location' => 'required' 
+  
 
-        ]); 
+    EventContact::find($id)->update($request->all());   
 
-        Event::find($id)->update($request->all()); 
+  
 
-        return redirect()->route('events.index')->with('success','Event updated successfully');     
+    return redirect()->route('agendas.index')->with('success','Agenda updated successfully');   
 
-    } 
+} 
 
- 
+  
 
     /** 
 
      * Remove the specified resource from storage. 
 
+     * 
+
+     * @param int $id 
+
+     * @return \Illuminate\Http\Response 
+
      */ 
 
-    public function destroy(string $id) 
+    public function destroy($id) 
 
     { 
 
-        Event::find($id)->delete(); 
+        Contact::find($id)->delete();   
 
-        return redirect()->route('events.index')->with('success','Event removed successfully'); 
+        return redirect()->route('eventContacts.index')->with('success','Event contact removed successfully');  
 
     } 
 

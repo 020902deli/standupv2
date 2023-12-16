@@ -13,4 +13,11 @@ class Contact extends Model
 
     protected $table = 'contacts'; 
     //use HasFactory;
+    public function eventContacts() 
+
+   { 
+
+       return $this->hasMany('App\EventContact', 'id_rep_cont'); 
+
+   } 
 }
