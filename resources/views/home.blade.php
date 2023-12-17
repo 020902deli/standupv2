@@ -26,8 +26,10 @@
                         <a href="{{ route('eventContacts.index') }}" class="btn btn-primary mx-2 my-2">Event Contact</a>
                         <a href="{{ route('partnerSponsors.index') }}" class="btn btn-primary mx-2 my-2">Parteneri/Sponsori</a>
                         <a href="{{ route('spContacts.index') }}" class="btn btn-primary mx-2 my-2">Parteneri/Sponsori C </a>
-                        <a href="{{ route('spContacts.index') }}" class="btn btn-primary mx-2 my-2">Cumpara bilete</a>
+                        <a href="{{ url('/ticket') }}" class="btn btn-primary mx-2 my-2">Cumpara bilete</a>
+
                         </div>
+
             </div>
             </div>
             

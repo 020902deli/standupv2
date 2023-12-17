@@ -8,7 +8,8 @@ use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\EventContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PartnerSponsorController;
-use App\Http\Controllers\SpContactController; 
+use App\Http\Controllers\SpContactController;
+use App\Http\Controllers\TicketsController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -73,5 +74,13 @@ Route::group(['middleware' => 'auth'], function () {
 
     //spCONTACT//
     Route::get('/spContacts', [SpContactController::class, 'index']);
-    Route::resource('spContacts', SpContactController::class); 
+    Route::resource('spContacts', SpContactController::class);
+
+    //COS//
+    Route::get('/ticket', [TicketsController::class, 'index']); //afisare pagina de start
+    Route::get('/cart', [TicketsController::class, 'cart']); //cos
+    //Route::resource('cart', TicketsController::class);
+    Route::get('/add-to-cart/{id}', [TicketsController::class, 'addToCart']);//adaug in cos
+    Route::patch('/update-cart', [TicketsController::class, 'update']); //modific cos
+    Route::delete('/remove-from-cart', [TicketsController::class, 'remove']);//sterg din cos
 });
