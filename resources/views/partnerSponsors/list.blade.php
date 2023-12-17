@@ -24,7 +24,7 @@
 
                 <div class="pull-right">
                 @if (Auth::user()->admin === 1)
-                    <a href="/partnerSponsors/create" class="btn btn-info">Adaugare Partener / Sponsor Nou</a> 
+                    <a href="/partnerSponsors/create" class="btn btn-default">Adaugare Partener / Sponsor Nou</a> 
                 </div> 
                 @endif
             </div> 

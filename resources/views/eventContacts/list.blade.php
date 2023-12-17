@@ -26,7 +26,7 @@
                     @if (Auth::user()->admin === 1)
 
 
-                    <a href="/eventContacts/create" class="btn btn-info">Adaugare event contact </a>
+                    <a href="/eventContacts/create" class="btn btn-default">Adaugare event contact </a>
 
                     @endif
 

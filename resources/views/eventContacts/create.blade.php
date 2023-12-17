@@ -56,12 +56,12 @@
                     @endforeach
                 </select> 
             </div> 
-
+            <br>
             <div class="form-group"> 
 
-                <input type="submit" value="Adauga Event Contact" class="btn btn-info"> 
+                <input type="submit" value="Adauga Event Contact" class="btn btn-primary"> 
 
-                <a href="{{ route('eventContacts.index') }}" class="btn btn-primary">Cancel</a> 
+                <a href="{{ route('eventContacts.index') }}" class="btn btn-warning">Cancel</a> 
             </div> 
 
             {{ Form::close() }} 

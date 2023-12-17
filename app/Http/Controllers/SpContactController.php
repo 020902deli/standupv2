@@ -78,7 +78,7 @@ class SpContactController extends Controller
     // create new agenda 
     SpContact::create($request->all()); 
 
-    return redirect()->route('partnerSponsors.index')->with('success', 'Your sponsor/partner contact added successfully!');
+    return redirect()->route('spContacts.index')->with('success', 'Your sponsor/partner contact added successfully!');
 }
 
     /**

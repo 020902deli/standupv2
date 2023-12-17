@@ -1,67 +1,38 @@
-@extends('layouts.app') 
+@extends('layouts.app')
 
-@section('content') 
+@section('content')
+<div class="panel panel-default">
+    <div class="panel-heading">Adaugă Comediant nou</div>
+    <div class="panel-body">
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <strong>Errors:</strong>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
- <div class="panel panel-default"> 
+        {{ Form::open(array('route' => 'comedians.store', 'method' => 'POST')) }}
 
- <div class="panel-heading">Adaugă Comediant nou</div> 
+        <div class="form-group">
+            <label for="name">Nume</label>
+            <input type="text" name="name" class="form-control" value="{{ old('name') }}">
+        </div>
 
- <div class="panel-body"> 
+        <div class="form-group">
+            <label for="description">Descriere</label>
+            <textarea name="description" class="form-control" rows="3">{{ old('description') }}</textarea>
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="submit" value="Adauga Comediant" class="btn btn-primary">
+            <a href="{{ route('comedians.index') }}" class="btn btn-warning">Cancel</a>
+        </div>
 
-@if (count($errors) > 0) 
-
- <div class="alert alert-danger"> 
-
- <strong>Errors:</strong> 
-
- <ul> 
-
-@foreach ($errors->all() as $error) 
-
- <li>{{ $error }}</li> 
-
-@endforeach 
-
-</ul> 
-
-</div> 
-
-@endif 
-
- {{ Form::open(array('route' => 'comedians.store','method'=>'POST')) }} 
-
-<div class="form-group"> 
-
-<label for="name">Nume</label> 
-
-<input type="text" name="name" class="form-control" 
-
-value="{{old('name') }}"> 
-
-</div> 
-
-<div class="form-group"> 
-
-<label for="description">Descriere</label> 
-
-<textarea name="description" class="form-control" 
-
-rows="3">{{old('description') }}</textarea> 
-
-</div> 
-
-<div class="form-group"> 
-
-<input type="submit" value="Adauga Comediant" class="btn btn-info"> 
-
-<a href="{{ route('comedians.index') }}" class="btn btndefault">Cancel</a> 
-
-</div> 
-
- {{ Form::close() }} 
-
-</div> 
-
-</div> 
-
-@endsection 
+        {{ Form::close() }}
+    </div>
+</div>
+@endsection

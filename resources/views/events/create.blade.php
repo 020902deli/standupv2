@@ -68,13 +68,13 @@
 
             </div> 
 
- 
+ <br>
 
             <div class="form-group"> 
 
-                <input type="submit" value="Adauga Sarcina" class="btn btn-info"> 
+                <input type="submit" value="Adauga Sarcina" class="btn btn-primary"> 
 
-                <a href="{{ route('events.index') }}" class="btn btn-default">Cancel</a> 
+                <a href="{{ route('events.index') }}" class="btn btn-warning">Cancel</a> 
 
             </div> 
 

@@ -38,10 +38,10 @@
             <label for="phone">Phone</label>
             <input type="integer" name="phone" class="form-control" value="{{ $partnerSponsor->date }}">
         </div>
-
+        <br>
         <div class="form-group">
-            <input type="submit" value="Salvare Modificari" class="btn btn-info">
-            <a href="{{ route('partnerSponsors.index') }}" class="btn btn-primary">Cancel</a>
+            <input type="submit" value="Salvare Modificari" class="btn btn-primary">
+            <a href="{{ route('partnerSponsors.index') }}" class="btn btn-warning">Cancel</a>
         </div>
 
         {!! Form::close() !!}

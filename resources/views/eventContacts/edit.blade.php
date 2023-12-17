@@ -54,12 +54,12 @@
                 <input type="text" name="id_contact" class="form-control" value="{{ $eventContact->contact->id_contact }}"> 
 
             </div> 
-
+            <br>
             <div class="form-group">  
 
-                <input type="submit" value="Salvare Modificari Event Contact " class="btn btn-info">  
+                <input type="submit" value="Salvare Modificari Event Contact " class="btn btn-primary">  
 
-                <a href="{{ route('eventContacts.index') }}" class="btn btn-primary">Cancel</a>  
+                <a href="{{ route('eventContacts.index') }}" class="btn btn-warning">Cancel</a>  
 
             </div>  
 

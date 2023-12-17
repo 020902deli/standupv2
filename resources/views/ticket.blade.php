@@ -13,7 +13,7 @@
                         <div class="caption">
                             <h4>{{ $ticket->name }}</h4>
                             <p>{{ Illuminate\Support\Str::limit(strtolower($ticket->description), 50) }}</p>
-                            <p><strong>Pret: </strong> {{ $ticket->price }}$</p>
+                            <p><strong>Pret: </strong> {{ $ticket->price }}$ {{ $ticket->type }} </p>
                             <p class="btn-holder">
                                 <a href="{{ url('add-to-cart/'.$ticket->id) }}" class="btn btn-warning btn-block text-center" role="button">Pune in cos</a>
                             </p>

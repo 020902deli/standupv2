@@ -21,15 +21,15 @@ class TicketsSeeder extends Seeder
         ]);
 
         DB::table('tickets')->insert([
-            'name' => 'Stand Up Comedy cu Maria Popovici, Mincu, Banciu - Vlad Olteanu la Club 99',
-            'photo' => 'https://static.iabilet.ro/img/auto_resized/db/event/01/68/24/00000246887-cf6a-720x405-wtm-8e9b6726.jpg',
-            'price' => 35.00, 
+            'name' => 'Iasi: Stand-Up Comedy cu Bordea, Cortea și Claudiu Popa - A DOUA TINERETE ',
+            'photo' => 'https://static.iabilet.ro/img/auto_resized/db/event/01/66/0f/00000244905-13c8-800x800-n-e72874ec.png',
+            'price' => 40.00, 
 		    'type' => 'adult'
         ]);
 
         DB::table('tickets')->insert([
             'name' => 'Stand Up Comedy cu Maria Popovici, Mincu, Banciu - Vlad Olteanu la Club 99',
-            'photo' => 'https://static.iabilet.ro/img/auto_resized/db/event/01/68/24/00000246887-cf6a-720x405-wtm-8e9b6726.jpg1',
+            'photo' => 'https://static.iabilet.ro/img/auto_resized/db/event/01/68/24/00000246887-cf6a-720x405-wtm-8e9b6726.jpg',
             'price' => 25.00, 
 		    'type' => 'pensionar'
         ]);

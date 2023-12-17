@@ -38,10 +38,10 @@
                 @endforeach
             </select>
         </div>
-
+        <br>
         <div class="form-group">
-            <input type="submit" value="Adauga SP Contact" class="btn btn-info">
-            <a href="{{ route('spContacts.index') }}" class="btn btn-primary">Cancel</a>
+            <input type="submit" value="Adauga SP Contact" class="btn btn-primary">
+            <a href="{{ route('spContacts.index') }}" class="btn btn-warning">Cancel</a>
         </div>
 
         {{ Form::close() }}

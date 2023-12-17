@@ -1,100 +1,79 @@
-@extends('layouts.app') 
+@extends('layouts.app')
 
-  
+@section('content')
 
-@section('content') 
+<div class="panel panel-default">
 
-  
+    <div class="panel-heading">
 
-<div class="panel panel-default"> 
+        Modificare informatii Contact
 
-  
+    </div>
 
-    <div class="panel-heading">Modificare informatii Contact</div> 
+    <div class="panel-body">
 
-  
+        <!-- Exista inregistrari in tabelul task -->
 
-    <div class="panel-body"> 
+        @if (count($errors) > 0)
 
-  
+        <div class="alert alert-danger">
 
-        <!-- Exista inregistrari in tabelul task --> 
+            <strong>Eroare:</strong>
 
-        @if (count($errors) > 0) 
+            <ul>
 
-            <div class="alert alert-danger"> 
+                @foreach ($errors->all() as $error)
 
-                <strong>Eroare:</strong> 
+                <li>{{ $error }}</li>
 
-                <ul> 
+                @endforeach
 
-                    @foreach ($errors->all() as $error) 
+            </ul>
 
-                        <li>{{ $error }}</li> 
+        </div>
 
-                    @endforeach 
+        @endif
 
-                </ul> 
+        <!-- Populez campurile formularului cu datele aferente din tabela contact -->
 
-            </div> 
+        {!! Form::model($contact, ['method' => 'PATCH', 'route' => ['contacts.update', $contact->id_contact]]) !!}
 
-        @endif 
+        <div class="form-group">
 
-  
+            <label for="name">Nume</label>
 
-        <!-- Populez campurile formularului cu datele aferente din tabela contact --> 
+            <input type="text" name="name" class="form-control" value="{{ $contact->name }}">
 
-        {!! Form::model($contact, ['method' => 'PATCH', 'route' => ['contacts.update', $contact->id_contact]]) !!} 
+        </div>
 
-            <div class="form-group"> 
+        <div class="form-group">
 
-                <label for="name">Nume</label> 
+            <label for="email">Email</label>
 
-                <input type="text" name="name" class="form-control" value="{{ $contact->name }}"> 
+            <input type="email" name="email" class="form-control" value="{{ old('email') }}">
 
-            </div> 
+        </div>
 
-  
+        <div class="form-group">
 
-            <div class="form-group"> 
+            <label for="phone">Phone</label>
 
-                <label for="email">Email</label> 
+            <input type="number" name="phone" class="form-control" value="{{ old('phone') }}">
 
-                <input type="email" name="email" class="form-control" value="{{ old('email') }}"> 
+        </div>
+        <br>
+        <div class="form-group">
 
-            </div> 
+            <input type="submit" value="Salvare Modificari" class="btn btn-primary">
 
-  
+            <a href="{{ route('contacts.index') }}" class="btn btn-warning">Cancel</a>
 
-            <div class="form-group"> 
+        </div>
 
-                <label for="phone">Phone</label> 
+        {!! Form::close() !!}
 
-                <input type="number" name="phone" class="form-control" value="{{ old('phone') }}"> 
+    </div>
 
-            </div> 
+</div>
 
-  
-
-            <div class="form-group"> 
-
-                <input type="submit" value="Salvare Modificari" class="btn btn-info"> 
-
-                <a href="{{ route('contacts.index') }}" class="btn btn-default">Cancel</a> 
-
-            </div> 
-
-        {!! Form::close() !!} 
-
-         
-
-    </div> 
-
-  
-
-</div> 
-
-  
-
-@endsection 
-
+@endsection

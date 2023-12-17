@@ -33,11 +33,11 @@
                 <label for="phone">Phone</label>
                 <input type="integer" name="phone" class="form-control" value="{{ old('phone') }}">
             </div>
-
+            <br>
 
             <div class="form-group">
-                <input type="submit" value="Adauga Partnere / Sponsor" class="btn btn-info">
-                <a href="{{ route('partnerSponsors.index') }}" class="btn btn-primary">Cancel</a>
+                <input type="submit" value="Adauga Partnere / Sponsor" class="btn btn-primary">
+                <a href="{{ route('partnerSponsors.index') }}" class="btn btn-warning">Cancel</a>
             </div>
 
             {{ Form::close() }}

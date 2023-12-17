@@ -8,7 +8,7 @@
     </div>
     <div class="panel-body">
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('partnerSponsors.index') }}">Inapoi la Parteneri/Sponsori</a>
+            <a class="btn btn-default" href="{{ route('partnerSponsors.index') }}">Inapoi la Parteneri/Sponsori</a>
         </div>
 
         <!--Name-->

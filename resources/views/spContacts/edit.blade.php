@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
 <div class="panel panel-default">
@@ -31,10 +31,10 @@
             <label for="id_sp">ID_SPONSOR/PARTENER:</label>
             <input type="text" name="id_sp" class="form-control" value="{{ $spContact->partnerSponsor->id_sp }}">
         </div>
-
+        <br>
         <div class="form-group">
-            <input type="submit" value="Salvare Modificari SP Contact " class="btn btn-info">
-            <a href="{{ route('spContacts.index') }}" class="btn btn-primary">Cancel</a>
+            <input type="submit" value="Salvare Modificari SP Contact " class="btn btn-primary">
+            <a href="{{ route('spContacts.index') }}" class="btn btn-warning">Cancel</a>
         </div>
 
         {!! Form::close() !!}

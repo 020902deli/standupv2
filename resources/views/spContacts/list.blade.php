@@ -15,7 +15,7 @@
             <div class="form-group">
                 <div class="pull-right">
                     @if (Auth::user()->admin === 1)
-                    <a href="/spContacts/create" class="btn btn-info">Adaugare sp contact Nou</a>
+                    <a href="/spContacts/create" class="btn btn-default">Adaugare sp contact Nou</a>
                     @endif
                 </div>
             </div>

@@ -7,7 +7,7 @@
         </div>
         <div class="panel-body">
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('spContacts.index') }}">Inapoi la Patreneri/Sponsori Contact</a>
+                <a class="btn btn-default" href="{{ route('spContacts.index') }}">Inapoi la Patreneri/Sponsori Contact</a>
             </div>
 
             <!-- EVENT DETAILS -->

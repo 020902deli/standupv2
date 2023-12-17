@@ -88,7 +88,7 @@
         <div class="row">
             <div class="col-lg-12 col-sm-12 col-12 main-section">
                 <div class="dropdown">
-                    <button type="button" class="btn btn-info" data-toggle="dropdown">
+                    <button type="button" class="btn btn-primary" data-toggle="dropdown">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cos
                         <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
                     </button>
@@ -114,12 +114,14 @@
                                     <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
                                         <img src="{{ $details['photo'] }}" width="150" height="150" />
                                     </div>
+                                  
                                     <div class="col-lg-8 col-sm-8 col-8 cart-detail-ticket">
                                         <p>{{ $details['name'] }}</p>
                                         <span class="price text-info"> ${{ $details['price'] }}</span>
                                         <span class="count"> Cantitate:{{ $details['quantity'] }}</span>
                                     </div>
                                 </div>
+                                <br>
                             @endforeach
                         @endif
                         <div class="row">
