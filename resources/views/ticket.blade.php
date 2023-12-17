@@ -1,3 +1,4 @@
+
 @extends('layoutcos')
 
 @section('title', 'Tickets')
@@ -8,7 +9,7 @@
             @foreach($tickets as $ticket)
                 <div class="col-xs-18 col-sm-6 col-md-3">
                     <div class="thumbnail">
-                        <img src="{{ $ticket->photo }}" width="500" height="300">
+                        <img src="{{ $ticket->photo }}" width="300" height="250">
                         <div class="caption">
                             <h4>{{ $ticket->name }}</h4>
                             <p>{{ Illuminate\Support\Str::limit(strtolower($ticket->description), 50) }}</p>
