@@ -35,7 +35,9 @@
                     <ul class="navbar-nav me-auto">
 
                     </ul>
-
+                    <ul class="navbar-nav mx-auto">
+                    <b>STAND-UP</b>
+                    </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
