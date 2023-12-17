@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('Welcome !') }}
                 </div>
                 <div class="mt-4 text-center">
                         <a href="{{ route('events.index') }}" class="btn btn-primary mx-2 my-2">Evenimente</a>
