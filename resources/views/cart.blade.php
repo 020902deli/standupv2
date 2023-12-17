@@ -22,7 +22,7 @@
                         <td data-th="Ticket">
                             <div class="row">
                                 <div class="col-sm-3 hidden-xs">
-                                    <img src="{{ $details['photo'] }}" width="100" height="100" class="img-responsive"/>
+                                    <img src="{{ $details['photo'] }}" width="150" height="150" class="img-responsive"/>
                                 </div>
                                 <div class="col-sm-9">
                                     <h4 class="nomargin">{{ $details['name'] }}</h4>
