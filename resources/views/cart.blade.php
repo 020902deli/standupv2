@@ -48,6 +48,7 @@
             </tr>
             <tr>
                 <td><a href="{{ url('/ticket') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continuare Cumparaturi</a></td>
+                <td><a href="{{ url('/session') }}" class="btn btn-success" id="checkout-live-button"><i class="fa fa-money"></i> Checkout</a></td>
                 <td colspan="2" class="hidden-xs"></td>
                 <td class="hidden-xs text-center"><strong>Total ${{ $total }}</strong></td>
             </tr>

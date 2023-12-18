@@ -76,6 +76,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/spContacts', [SpContactController::class, 'index']);
     Route::resource('spContacts', SpContactController::class);
 
+    //stripe//
+        //stripe
+    Route::any('/session', 'App\Http\Controllers\StripeController@session')->name('session');
+    Route::get('/success', 'App\Http\Controllers\StripeController@success')->name('success');
+    Route::get('/checkout', 'App\Http\Controllers\StripeController@checkout')->name('checkout');
+
     //COS//
     Route::get('/ticket', [TicketsController::class, 'index']); //afisare pagina de start
     Route::get('/cart', [TicketsController::class, 'cart']); //cos
